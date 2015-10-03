@@ -1,0 +1,15 @@
+README
+
+Basic Controls:
+Turn Right :   Right Arrow Key
+Turn Left : Left Arrow Key
+Accelerate Forward : Up Arrow Key
+Accelerate Backwards: Down Arrow Key
+Shoot: Space Bar
+Pause/unpause: p
+Quit: escape
+
+This program was initially created as a final project for my Intro to Programming class with two other people.
+I have since gone back and edited somethings. After editing all of the physics, collision, and wrapping code is my own as 
+well as all of the Ship, and Asteroid classes. I also helped write most of the main function and tweaked the thrust, debris,
+and missile classes.
