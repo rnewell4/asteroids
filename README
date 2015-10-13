@@ -10,6 +10,4 @@ Pause/unpause: p
 Quit: escape
 
 This program was initially created as a final project for my Intro to Programming class with two other people.
-I have since gone back and edited somethings. After editing all of the physics, collision, and wrapping code is my own as 
-well as all of the Ship, and Asteroid classes. I also helped write most of the main function and tweaked the thrust, debris,
-and missile classes.
+I have since gone back and largely edited and reorganized the project. All of the physics code and the class code outside of the game class are mine. As for the game class, this was orginally all in one massive main function which I took and broke down into the new game class whilte tweaking some things here and there. 

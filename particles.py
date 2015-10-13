@@ -17,7 +17,7 @@ class Missile (PhysicsObject):
 
     def draw(self, surface):
         """draws missle"""
-        PG.draw.circle(surface, [255, 255, 255], toInt(self.center), 1)
+        PG.draw.circle(surface, WHITE, toInt(self.center), 1)
 
     def update(self, dt):
         """updates position of missle"""
@@ -31,11 +31,12 @@ class Thrust (PhysicsObject):
     oppposite direction in which the ship was facing."""
     def __init__(self, Ship):
         self.t = 0
-        ref = array([-SSIZE, 0])
+        ref = array([-SSIZE, 0]) #reference array used to create corners
         self.center = Ship.center + rotate(Ship.angle, ref, (0,0))
         ref = array([-.5*MSPEED, 0])
         angle = Ship.angle -math.pi/6 + R.random()
         self.vel = -Ship.vel + rotate(angle, ref, (0, 0))
+        #initialize to a random reddish color
         self.red = R.randint(200, 255)
         self.blue = R.randint(0, 120)
         self.green = R.randint(0, 150)
@@ -58,7 +59,7 @@ class Debris(PhysicsObject):
     ship or asteroid get destroyed."""
     def __init__(self, obj, size):
         self.t = 0
-        self.velocity = 20
+        self.velocity = 100
         self.radius = size / 10
         self.center = obj.center  
 
@@ -72,6 +73,7 @@ class Debris(PhysicsObject):
         ref3 = array([self.radius - 3, 0])
         ref4 = array([self.radius - 4, 0])
         for angle in self.angle:
+            #Draws all of the particles starting at different radii
             p1 = rotate(angle, ref1, (0,0)) + self.center
             p2 = rotate(angle, ref2, (0,0)) + self.center
             p3 = rotate(angle, ref3, (0,0)) + self.center
@@ -84,5 +86,5 @@ class Debris(PhysicsObject):
 
     def update(self, dt):
         """updates position of fire"""
-        self.t += dt*5
-        self.radius = self.radius + self.velocity*dt*10
+        self.t += dt
+        self.radius = self.radius + self.velocity*dt

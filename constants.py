@@ -8,7 +8,7 @@ ASIZE = 50
 # Speed of asteroids
 SPEED = 20
 # Speed of Bullets
-MSPEED = 2000
+MSPEED = 1000
 # Size of Ship
 SSIZE = 20
 # Acceleration of Ship
@@ -24,9 +24,13 @@ VMAX = 2000
 # Maximum Frames per second
 FPS = 60
 # Life time of bullet
-MAXT = .25
+BMAXT = .5
+#Life time of debris
+DMAXT = .3
+#Life time of thrust
+TMAXT = .12
 # Time dead
-TDEAD = MAXT * 3
+TDEAD = .75
 # minimum time between bullet shots
 TIME_TO_PRESS = 210
 # time ship is invincible

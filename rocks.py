@@ -11,7 +11,7 @@ class Asteroid (PhysicsObject):
     def __init__(self, order=3, start=[]):
         self.order = order
         self.size = self.order / 3 * ASIZE
-        if start == []:
+        if start == []: #Wasn't created by destruction of larger asteroid
             width, height = SIZE
             start = [int(R.random()*width) + self.size/2,
                      int(R.random()*height) + self.size/2]

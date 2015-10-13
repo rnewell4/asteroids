@@ -1,39 +1,7 @@
 from physics import *
 import pygame as PG
 import random as R
-"""Initial Conditions"""
-# Screen size
-SIZE = (1280, 720)
-# Number of Asteroids created
-ASTEROIDS = 2
-# Size of asteroids
-ASIZE = 50
-# Speed of asteroids
-SPEED = 20
-# Speed of Bullets
-MSPEED = 4200
-# Size of Ship
-SSIZE = 20
-# Acceleration of Ship
-ACCEL = 200
-# Initial Score
-SCORE = 0
-# Initial Lives
-LIVES = 3
-# Initial Level
-LEVEL = 1
-# Maximum speed for ship
-VMAX = 4000
-# Maximum Frames per second
-FPS = 60
-# Life time of bullet
-MAXT = .127
-# Time dead
-TDEAD = MAXT * 6
-# minimum time between bullet shots
-TIME_TO_PRESS = 210
-# time ship is invincible
-INV_TIME = .4
+from constants import *
 
 class Ship (PhysicsObject):
     """User guided object that moves and accelerates through space, shooting
@@ -47,14 +15,14 @@ class Ship (PhysicsObject):
 
     def draw(self, surface):
         """Draws the ship"""
-        self.red = 255 * R.random()
-        self.green = 255 * R.random()
-        self.blue = 255 * R.random()
         if self.is_Invincible():
+            self.red = 255 * R.random()
+            self.green = 255 * R.random()
+            self.blue = 255 * R.random()
             PG.draw.polygon(surface, (self.red, self.green, self.blue),
                             self.corners, 1)
         else:
-            PG.draw.polygon(surface, (255, 255, 255), self.corners, 1)
+            PG.draw.polygon(surface, WHITE, self.corners, 1)
 
     def orientShip(self):
         """Updates the corners of the ship"""
