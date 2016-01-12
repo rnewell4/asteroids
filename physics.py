@@ -68,7 +68,7 @@ def get_axis_list(obj1):
     return axis
 
 def collides(obj1, obj2):
-    """Checks for collision between two polyhedrons based on the 
+    """Checks for collision between two 2D shapes based on the 
     Separating Axis Theorem."""
     axis = get_axis_list(obj1)+get_axis_list(obj2) 
     for a in axis:

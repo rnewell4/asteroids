@@ -155,7 +155,9 @@ class Game:
             self.screen.blit(scoreboard, [0, 0])
             self.screen.blit(numlives, [0, 25])
             self.screen.blit(level, [SIZE[0]-100, 0])
-
+            
+            self.update_all()
+            
             #Draws all items on screen
             allItems = self.asteroids+self.bullets+self.thrustballs+self.debris+self.debris2
             for item in allItems:
@@ -167,7 +169,7 @@ class Game:
 
             PG.display.flip()
 
-            self.update_all()
+            
 
             if self.lives == 0:
                 return

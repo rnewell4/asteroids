@@ -6,9 +6,9 @@ ASTEROIDS = 2
 # Size of asteroids
 ASIZE = 50
 # Speed of asteroids
-SPEED = 20
+SPEED = 30
 # Speed of Bullets
-MSPEED = 1000
+MSPEED = 5000
 # Size of Ship
 SSIZE = 20
 # Acceleration of Ship
@@ -24,7 +24,7 @@ VMAX = 2000
 # Maximum Frames per second
 FPS = 60
 # Life time of bullet
-BMAXT = .5
+BMAXT = .1
 #Life time of debris
 DMAXT = .3
 #Life time of thrust

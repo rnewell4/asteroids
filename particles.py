@@ -13,7 +13,7 @@ class Missile (PhysicsObject):
         self.center=Ship.getCorners()[0]
         ref = array([MSPEED, 0])
         self.vel = Ship.vel + rotate(Ship.angle, ref, (0,0))
-        self.corners = [self.center]
+        self.corners = [self.center, self.center]
 
     def draw(self, surface):
         """draws missle"""
@@ -21,9 +21,10 @@ class Missile (PhysicsObject):
 
     def update(self, dt):
         """updates position of missle"""
+        self.past = (self.center[0], self.center[1])
         self.t += dt
         self.center += self.vel * dt
-        self.corners = [self.center]
+        self.corners = [self.center, self.past]
 
 
 class Thrust (PhysicsObject):
